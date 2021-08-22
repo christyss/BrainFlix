@@ -7,7 +7,7 @@ function Header() {
     return (
         <header className="header">
             <a className="header__logo-link"><img className="header__logo" src={Logo} alt="BrainFlix Logo"/></a>
-            <input className="header__search-bar" type="search" name="searchBar"  placeholder="Search" />
+            <div className="header__search"><input className="header__search-bar" type="search" name="searchBar"  placeholder="Search" /></div>
             <div className="header__sub-container">
               <button className="header__sub-container-btn">UPLOAD</button>
               <img className="header__sub-container-user-icon" src={UserIcon} alt="Icon" />

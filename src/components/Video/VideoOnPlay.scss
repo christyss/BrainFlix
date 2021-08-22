@@ -5,7 +5,7 @@
 
 @include mobile{
     .video-container{
-        &__video{
+        &__video-onplay{
             height: 11.45rem;
             width: 100%;
         }
@@ -66,7 +66,7 @@
 
         &__description-text{
             font-size: $mobile-paragraph;
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 1rem 2rem 1rem;
         }
         
         
@@ -74,6 +74,64 @@
     }
 }
 
+@include tablet{
+    .video-container{
+        
+        &__video{
+            @include tablet-onplay-video-size;
 
+            &-onplay{
+                @include tablet-onplay-video-size;
+            }
+        
+        }
+
+        &__video-details{
+            margin: 0 2rem;
+        }
+
+        &__title{
+            font-size: $tablet-h1;
+        }
+
+        &__all-info{
+            display: flex;
+            justify-content: space-between;
+
+            .video-container__info{
+
+                &-channel{
+                font-size: $tablet-subheader;  
+                }
+                &-date{
+                    font-size: $tablet-subheader;  
+                }
+            }
+
+            .video__views-number{
+                padding: 0.5rem;
+            }
+
+            .video__likes-number{
+                padding: 0.5rem;
+            }
+        }
+
+        &__description{
+            padding: 0 2rem;
+            width: 70%;
+
+            &-text{
+                padding: 1.5rem 0 1rem 0;
+                font-size: $tablet-paragraph;
+            }
+        }
+    }
+ 
+}
+
+@include desktop{
+    
+}
 
 

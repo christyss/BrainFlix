@@ -3,38 +3,46 @@
 @use '../../partials/typography.scss' as *;
 @use '../../partials/global.scss';
 
-.video-list{
-    margin: 1rem;
+@include mobile{
+    .video-list{
+        margin: 1rem;
 
-    &__title{
-        font-size: $mobile-subheader;
-        color: $silver;
-        padding: 1.2rem 0;
-    }
-
-    .videos-container{
-    display: flex;
-
-        &__video{
-            &-image{
-                @include video-size-list;
-                margin: 0.5rem 1rem 0.5rem 0;
-                object-fit: cover;
-            }
+        &__title{
+            font-size: $mobile-subheader;
+            color: $silver;
+            padding: 1.2rem 0;
         }
 
-        &__video-info{
-            &-name{
-                font-size: $mobile-subheader;
-                margin-top: 0.5rem;
+        .videos-container{
+        display: flex;
+
+            &__video{
+                &-image{
+                    @include video-size-list;
+                    margin: 0.5rem 1rem 0.5rem 0;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
             }
-            &-channel{
-                font-size: $mobile-subheader;
-                padding-top: 0.5rem;
+
+            &__video-info{
+                &-name{
+                    font-size: $mobile-subheader;
+                    margin-top: 0.5rem;
+                }
+                &-channel{
+                    font-size: $mobile-subheader;
+                    padding-top: 0.5rem;
+                }
             }
         }
     }
 }
 
+@include tablet{
+    
+}
 
+@include desktop{
 
+}

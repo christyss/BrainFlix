@@ -7,6 +7,12 @@
     }
 };
 
+@mixin mobile-tablet-max {
+    @media (min-width: $mobile) and (max-width: $tablet){
+        @content
+    }
+};
+
 @mixin tablet {
     @media (min-width: $tablet) {
         @content
@@ -31,4 +37,9 @@
     height: 4.5rem;
     width: 7.5rem;
     border-radius: 0.25rem;
+}
+
+@mixin tablet-onplay-video-size {
+    height: 25rem;
+    width: 43.75rem;
 }

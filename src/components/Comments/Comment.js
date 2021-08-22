@@ -9,28 +9,30 @@ function Comment(props) {
             <form className="comment-form">
                 <h2 className="comment-form__title">{}Comments</h2>
                 <div className="comment-form__user-input">
-                    <div className="comment-form__user-input comment-form__user">
+                    <div className="comment-form__user">
                         <img className="comment-form__user-icon" src={UserIcon} alt="Icon"/>
                     </div>
-                    <div className="comment-form__user-input comment-form__input">
+                    <div className="comment-form__input">
                         <h3 className="comment-form__input-title">JOIN THE CONVERSATION</h3>
-                        <textarea className="comment-form__input-area" type="text" name="input" placeholder="Write comment here"/>
-                        <button className="comment-form__input-btn">COMMENT</button>
+                        <div className="comment-form__input-action">
+                            <textarea className="comment-form__input-action-area" type="text" name="input" placeholder="Write comment here"/>
+                            <button className="comment-form__input-action-btn">COMMENT</button>
+                        </div>
                     </div>
                 </div>
             </form>
-            <section className="allComments">
+            <section className="all-comments">
                 {props.comments.map(comment => {
-                        return <div className="comments-container">
-                            <div>
-                                <div className="comments-container__user-icon"></div>
-                            </div>                           
-                            <div>
-                                <h3 className="comments-container__user-name">{comment.name}</h3>
-                                <h3 className="comments-container__comment-date">{comment.timestamp}</h3>
-                            </div>
-                                <p className="comments-container__comment">{comment.comment}</p> 
-                        </div>
+                        return <div key={comment.id} className="comment-container">
+                                        <div className="comment-container__icon"></div> 
+                                    <div className="comment-container__comment">                        
+                                        <div className="comment-container__comment-user">
+                                            <h3 className="comment-container__comment-user-name">{comment.name}</h3>
+                                            <h3 className="comment-container__comment-user-date">{comment.timestamp}</h3>
+                                        </div>
+                                        <p className="comment-container__comment-text">{comment.comment}</p> 
+                                    </div> 
+                                </div>
                 })}
             </section>
         </article>

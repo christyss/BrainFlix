@@ -13,6 +13,15 @@ class App extends Component{
     Video: VideoInfoComment[0],
     OnPlayVideoComments: VideoInfoComment[0].comments,
   }
+
+  nextVideo = (id) => {
+    console.log('CLick');
+    let newVideo = this.state.OnplayVideoDetail.find(video => video.id === id)
+
+    this.setState({
+      Video: newVideo
+    })
+  }
   
 
   render(){
@@ -21,7 +30,8 @@ class App extends Component{
           <Header />
           <VideoOnPlay onPlayVideo={this.state.Video} />
           <Comment comments={this.state.OnPlayVideoComments} />
-          <VideoList videoSelection={this.state.VideoList} />
+          <VideoList videoSelection={this.state.OnplayVideoDetail.filter(video => video.id !== this.state.Video.id)} 
+          handleClick={this.nextVideo} />
         </div>
       );
     }
