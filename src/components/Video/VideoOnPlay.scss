@@ -1,0 +1,17 @@
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/typography.scss' as *;
+@use '../../partials/global.scss';
+
+.video-container{
+    &__video{
+        height: 11.45rem;
+        width: 100%;
+    }
+
+    &__title{
+        font-size: $mobile-h1;
+    }
+}
+
+
