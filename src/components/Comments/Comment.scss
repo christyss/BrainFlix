@@ -1,7 +1,38 @@
 @use '../../partials/global.scss';
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
-.comment__user-icon{
-    height: 3rem; //need to edit
-    width: 3rem; //need to edit
+.comment-form{
+    margin: 0 1rem;
+    
+    &__title{
+        font-size: $mobile-subheader;
+        padding-bottom: 2rem;
+    }
 
+    &__user-input{
+        display: flex;
+
+        .comment-form__user{
+            &-icon{
+                @include user-icon;
+            }
+        }
+        .comment-form__input{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+
+    &__input-btn{
+        background-color: $brainflix-blue;
+        color: $white;
+        height: 3rem;
+        border-radius: 0.25rem;
+        padding: 0 2rem;
+        width: 100%;
+        border-style: hidden;
+
+    }
 }
