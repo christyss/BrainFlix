@@ -34,11 +34,17 @@
                 box-shadow: none;
                 background: url(../../assets/Images/Icons/Icon-search.svg) no-repeat 1rem center;
                 padding: 1rem;
-                border-style: solid; 
+                border-style: solid;
+                background-color: $alabaster; 
 
                 &:focus{
                     outline: none;
                 }
+
+                &::placeholder{
+                    color: $black;
+                }
+
             } 
         
         }
@@ -59,6 +65,12 @@
                 border-style: hidden; 
                 padding-left: 2rem;
                 margin: 0.5rem 1rem 1rem 1rem; 
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover{
+                    background-color:$brainflix-dark-blue;
+                }
 
 
 
@@ -90,7 +102,8 @@
 
             &-bar{
                 height: 3rem;
-                width: 100%;  
+                width: 18rem;
+                background-color: $alabaster;  
             }  
         }
 
@@ -99,9 +112,11 @@
             &-btn{
                 width: 7rem;
                 height: 3rem;
+                padding-right: 0.5rem;
                 margin-top: 1rem;
                 background-position-x: 12%;
                 font-size: $tablet-paragraph;
+                
             }
             &-user-icon{
                 margin-top: 1rem;
@@ -111,5 +126,17 @@
 }
 
 @include desktop{
-    
+    .header{
+        margin: 0.5rem 10rem;
+
+        &__search{
+            margin-left: 40%;
+
+            &-bar{
+                width: 18rem;
+                
+            }
+        }
+
+    }
 }

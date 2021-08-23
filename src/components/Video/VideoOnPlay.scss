@@ -18,6 +18,7 @@
         &__title{
             font-size: $mobile-h1;
             padding-top: 1.5rem;
+            font-weight: 600;
 
         }
 
@@ -32,6 +33,7 @@
                 color: $silver;
                 padding: 1rem 0 1.5rem 0.5rem;
                 font-size: $mobile-subheader;
+                font-weight: 400;
             }
         }
         
@@ -48,6 +50,7 @@
                 &-number{
                     padding: 0 0 1.5rem 0.5rem;
                     font-size: $mobile-subheader;
+                    font-weight: 400;
                 }   
             }
             .video__likes{
@@ -60,6 +63,7 @@
                 &-number{
                     padding: 0 0 1.5rem 0.5rem;
                     font-size: $mobile-subheader;
+                    font-weight: 400;
                 }
             }
         }
@@ -132,7 +136,7 @@
             width: 85%;
 
             &-text{
-                padding: 1.5rem 0 1rem 0;
+                padding: 2rem 0 1rem 0;
                 font-size: $tablet-paragraph;
                 font-weight: 400;
                 line-height: 1.5rem;
@@ -144,9 +148,28 @@
 
 @include desktop{
     .video-container{
+        &__title{
+            padding-top: 2.5rem;
+        }
         
         &__video-onplay{
             @include desktop-onplay-video-size;
+        }
+
+        &__video-details{
+            margin: 0;
+        }
+
+        &__description{
+            padding: 0;
+
+            &-text{
+                width: 85%;
+            }
+        }
+
+        &__views-likes{
+            padding-right: 1rem;
         }
     }
 

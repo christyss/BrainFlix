@@ -65,6 +65,11 @@
                         border-style: hidden; 
                         border-radius: 0.25rem;
                         font-weight: 600;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color:$brainflix-dark-blue;
+                        }
                     }
                 }
 
@@ -174,4 +179,12 @@
 
 }
 
-@include desktop{}
+@include desktop{
+    .comment-form{
+        margin: 1rem 0;
+    }
+
+    .all-comments{
+        margin: 0;
+    }
+}

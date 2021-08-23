@@ -1,0 +1,9 @@
+@use './partials/variables.scss' as *;
+@use './partials/mixins.scss' as *;
+
+@include desktop{
+    .container__description-comments-vidlist{
+        display: flex;
+        margin: 0 11rem;
+    }
+}

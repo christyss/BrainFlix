@@ -5,6 +5,8 @@ import VideoList from './components/Video/VideoList';
 import {Component} from 'react';
 import VideoData from './data/videos.json';
 import VideoInfoComment from './data/video-details.json';
+import VideoOnPlayDescription from './components/Video/VideoOnPlayDescription';
+import './App.scss';
 
 class App extends Component{
   state ={
@@ -28,9 +30,15 @@ class App extends Component{
         <div className="App">
           <Header />
           <VideoOnPlay onPlayVideo={this.state.Video} />
-          <Comment comments={this.state.OnPlayVideoComments} />
-          <VideoList videoSelection={this.state.OnplayVideoDetail.filter(video => video.id !== this.state.Video.id)} 
-          handleClick={this.nextVideo} />
+          <div className="container__description-comments-vidlist">
+            <div className="container__description-comments">
+              <VideoOnPlayDescription onPlayVideo={this.state.Video} />
+              <Comment comments={this.state.OnPlayVideoComments} />
+            </div>
+              <VideoList videoSelection={this.state.OnplayVideoDetail.filter(video => video.id !== this.state.Video.id)} 
+              handleClick={this.nextVideo} />
+          </div>
+          
         </div>
       );
     }
