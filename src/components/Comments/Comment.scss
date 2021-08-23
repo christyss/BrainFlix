@@ -3,80 +3,6 @@
 @use '../../partials/mixins.scss' as *;
 
 @include mobile{
-    .comment-form{
-        margin: 0 1rem;
-        
-        &__title{
-            font-size: $mobile-subheader;
-            padding-bottom: 1.5rem;
-        }
-
-        &__user-input{
-            display: flex;
-            border-bottom: 1px solid $mercury;
-
-            .comment-form__user{
-                &-icon{
-                    @include user-icon;
-                    margin: 1.5rem 1rem 1rem 0;
-                }
-            }
-            .comment-form__input{
-                display: flex;
-                flex-direction: column;
-
-                &-title{
-                    font-size: $mobile-paragraph;
-                    color: $silver;
-                }
-                &-action{
-                    &-area{
-                        resize: none;
-                        height: 5.5rem;
-                        border-radius: 0.25rem;
-                        margin: 0.5rem 0 1rem 0;
-                        width: 100%;
-
-                        &::placeholder{
-                            padding: 0.8rem;
-                            font-size: $mobile-paragraph;
-                        }
-
-                        &:focus{
-                            outline: none;
-                            border: 2px solid $brainflix-blue;
-                        }
-                    }
-                    &-btn{
-                        width: 100%;
-                        height: 3rem;
-                        color: $white;
-                        font-size: $tablet-paragraph;
-                        margin-bottom: 1.5rem;
-                        background-color: $brainflix-blue; 
-                        border-style: hidden; 
-                        border-radius: 0.25rem;
-                    }
-                }
-
-                
-            }
-        }
-        
-
-        &__input-btn{
-            background-color: $brainflix-blue;
-            color: $white;
-            height: 3rem;
-            border-radius: 0.25rem;
-            padding: 0 2rem;
-            width: 100%;
-            border-style: hidden;
-
-        }
-    }
-
-    //Actual comments
     .all-comments{
         margin: 1rem;
 
@@ -106,16 +32,20 @@
 
                     &-name{
                         font-size: $mobile-paragraph;
+                        font-weight: 600;
                     }
 
                     &-date{
                         font-size: $mobile-paragraph;
                         color: $silver;
+                        font-weight: 400;
                     }
                 }
 
                 &-text{
                     font-size: $mobile-paragraph;
+                    font-weight: 400;
+                    line-height: 1.3rem;
                 }
             }
             
@@ -124,19 +54,20 @@
 }
 
 @include tablet{
-    .comment-form{
-        margin: 2rem;
+    .all-comments{
+        margin: 0 2rem;
 
-        &__input-action{
+        .comment-container__comment-user{
             display: flex;
-            flex-direction: row;
+            justify-content: flex-start;
 
-            
-
+            &-date{
+                padding-left: 1rem;
+            }
         }
-        
-        &__input-action-area{
-            height: 3rem;
+
+        .comment-container__comment-text{
+            width: 88%;
         }
     }
 

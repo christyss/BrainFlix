@@ -1,4 +1,5 @@
 @use './variables.scss' as *;
+@use './typography.scss' as *;
 
 
 @mixin mobile {
@@ -42,4 +43,9 @@
 @mixin tablet-onplay-video-size {
     height: 25rem;
     width: 43.75rem;
+}
+
+@mixin desktop-onplay-video-size {
+    height: 33.75rem;
+    width: 59rem;
 }

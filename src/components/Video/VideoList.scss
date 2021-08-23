@@ -8,9 +8,11 @@
         margin: 1rem;
 
         &__title{
-            font-size: $mobile-subheader;
+            font-size: $mobile-paragraph;
             color: $silver;
             padding: 1.2rem 0;
+            font-weight: 600;
+
         }
 
         .videos-container{
@@ -29,10 +31,14 @@
                 &-name{
                     font-size: $mobile-subheader;
                     margin-top: 0.5rem;
+                    font-size: $mobile-paragraph;
+                    font-weight: 600;
                 }
                 &-channel{
                     font-size: $mobile-subheader;
                     padding-top: 0.5rem;
+                    font-size: $mobile-paragraph;
+                    font-weight: 400;
                 }
             }
         }
@@ -40,7 +46,12 @@
 }
 
 @include tablet{
-    
+    .video-list__title{
+        font-size: $tablet-paragraph;
+    }
+    .videos-container__video-info{
+        width: 23%;
+    }
 }
 
 @include desktop{

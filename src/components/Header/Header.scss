@@ -34,6 +34,7 @@
                 box-shadow: none;
                 background: url(../../assets/Images/Icons/Icon-search.svg) no-repeat 1rem center;
                 padding: 1rem;
+                border-style: solid; 
 
                 &:focus{
                     outline: none;

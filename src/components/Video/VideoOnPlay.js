@@ -1,5 +1,6 @@
 import View from '../../assets/Images/Icons/Icon-views.svg';
 import Like from '../../assets/Images/Icons/Icon-likes.svg';
+import videoDate from '../../Utils/timestamp-function';
 import './VideoOnPlay.scss';
 
 const VideoOnPlay = (props) => {
@@ -18,7 +19,7 @@ const VideoOnPlay = (props) => {
                 <div className="video-container__all-info">
                     <div className="video-container__info">
                         <h2 className="video-container__info-channel">By {video.channel}</h2>
-                        <h2 className="video-container__info-date">{video.timestamp}</h2>
+                        <h2 className="video-container__info-date">{videoDate(video.timestamp)}</h2>
                     </div>
                     <div className="video-container__views-likes">
                         <div className="video__views">

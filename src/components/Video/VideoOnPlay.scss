@@ -78,12 +78,18 @@
     .video-container{
         
         &__video{
-            @include tablet-onplay-video-size;
+            background-color: black;
+            display: flex;
+            justify-content: center;
 
             &-onplay{
                 @include tablet-onplay-video-size;
             }
         
+        }
+
+        &__info-date{
+            font-weight: 400;
         }
 
         &__video-details{
@@ -97,6 +103,7 @@
         &__all-info{
             display: flex;
             justify-content: space-between;
+            padding-top: 0.5rem;
 
             .video-container__info{
 
@@ -104,26 +111,31 @@
                 font-size: $tablet-subheader;  
                 }
                 &-date{
-                    font-size: $tablet-subheader;  
+                    font-size: $tablet-subheader;
+
                 }
             }
 
             .video__views-number{
                 padding: 0.5rem;
+                font-weight: 400;
             }
 
             .video__likes-number{
                 padding: 0.5rem;
+                font-weight: 400;
             }
         }
 
         &__description{
             padding: 0 2rem;
-            width: 70%;
+            width: 85%;
 
             &-text{
                 padding: 1.5rem 0 1rem 0;
                 font-size: $tablet-paragraph;
+                font-weight: 400;
+                line-height: 1.5rem;
             }
         }
     }
@@ -131,7 +143,13 @@
 }
 
 @include desktop{
-    
+    .video-container{
+        
+        &__video-onplay{
+            @include desktop-onplay-video-size;
+        }
+    }
+
 }
 
 

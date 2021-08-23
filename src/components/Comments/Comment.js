@@ -1,13 +1,15 @@
 import VideoComment from '../../data/video-details.json';
 import UserIcon from '../../assets/Images/Mohan-muruge.jpg';
+import videoDate from '../../Utils/timestamp-function';
 import './Comment.scss';
+import './InputComment.scss';
 import React from 'react';
 
 function Comment(props) {
     return (
         <article>
             <form className="comment-form">
-                <h2 className="comment-form__title">{}Comments</h2>
+                <h2 className="comment-form__title">{VideoComment[0].comments.length} Comments</h2>
                 <div className="comment-form__user-input">
                     <div className="comment-form__user">
                         <img className="comment-form__user-icon" src={UserIcon} alt="Icon"/>
@@ -19,7 +21,7 @@ function Comment(props) {
                             <button className="comment-form__input-action-btn">COMMENT</button>
                         </div>
                     </div>
-                </div>
+                </div> 
             </form>
             <section className="all-comments">
                 {props.comments.map(comment => {
@@ -28,7 +30,7 @@ function Comment(props) {
                                     <div className="comment-container__comment">                        
                                         <div className="comment-container__comment-user">
                                             <h3 className="comment-container__comment-user-name">{comment.name}</h3>
-                                            <h3 className="comment-container__comment-user-date">{comment.timestamp}</h3>
+                                            <h3 className="comment-container__comment-user-date">{videoDate(comment.timestamp)}</h3>
                                         </div>
                                         <p className="comment-container__comment-text">{comment.comment}</p> 
                                     </div> 

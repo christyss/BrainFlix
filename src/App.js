@@ -15,7 +15,6 @@ class App extends Component{
   }
 
   nextVideo = (id) => {
-    console.log('CLick');
     let newVideo = this.state.OnplayVideoDetail.find(video => video.id === id)
 
     this.setState({
