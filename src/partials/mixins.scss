@@ -49,3 +49,25 @@
     height: 33.75rem;
     width: 59rem;
 }
+
+@mixin input-area {
+    resize: none;
+    border-radius: 0.25rem;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1rem;
+
+    &::placeholder{
+        padding: 0.8rem;
+        font-size: $mobile-paragraph;
+        color: $black;
+    }
+
+    &:focus{
+        outline: none;
+        border: 2px solid $brainflix-blue;
+    }
+}

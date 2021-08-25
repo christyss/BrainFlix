@@ -1,45 +1,19 @@
 import Header from './components/Header/Header';
-import VideoOnPlay from './components/Video/VideoOnPlay';
-import Comment from './components/Comments/Comment';
-import VideoList from './components/Video/VideoList';
+import Home from './components/HomePage/Home';
+import Upload from './components/Upload/Upload';
 import {Component} from 'react';
-import VideoData from './data/videos.json';
-import VideoInfoComment from './data/video-details.json';
-import VideoOnPlayDescription from './components/Video/VideoOnPlayDescription';
-import './App.scss';
+import {BrowserRouter, Switch, Link, Route} from 'react-router-dom';
 
 class App extends Component{
-  state ={
-    VideoList: VideoData,
-    OnplayVideoDetail: VideoInfoComment,
-    Video: VideoInfoComment[0],
-    OnPlayVideoComments: VideoInfoComment[0].comments,
-  }
-
-  nextVideo = (id) => {
-    let newVideo = this.state.OnplayVideoDetail.find(video => video.id === id)
-
-    this.setState({
-      Video: newVideo
-    })
-  }
-  
-
   render(){
     return (
-        <div className="App">
+        <BrowserRouter>
           <Header />
-          <VideoOnPlay onPlayVideo={this.state.Video} />
-          <div className="container__description-comments-vidlist">
-            <div className="container__description-comments">
-              <VideoOnPlayDescription onPlayVideo={this.state.Video} />
-              <Comment comments={this.state.OnPlayVideoComments} />
-            </div>
-              <VideoList videoSelection={this.state.OnplayVideoDetail.filter(video => video.id !== this.state.Video.id)} 
-              handleClick={this.nextVideo} />
-          </div>
-          
-        </div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/upload" component={Upload} />
+          </Switch>
+        </BrowserRouter>
       );
     }
   }

@@ -1,5 +1,5 @@
-@use './partials/variables.scss' as *;
-@use './partials/mixins.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
 
 @include desktop{
     .container__description-comments-vidlist{
