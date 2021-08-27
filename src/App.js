@@ -1,8 +1,8 @@
 import Header from './components/Header/Header';
-import Home from './components/HomePage/Home';
-import Upload from './components/Upload/Upload';
+import Home from './pages/HomePage/Home';
+import Upload from './pages/Upload/Upload';
 import {Component} from 'react';
-import {BrowserRouter, Switch, Link, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 class App extends Component{
   render(){
@@ -11,6 +11,7 @@ class App extends Component{
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/videos/:videoId" component={Home} />
             <Route path="/upload" component={Upload} />
           </Switch>
         </BrowserRouter>

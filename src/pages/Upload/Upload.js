@@ -1,6 +1,6 @@
 import React from 'react';
 import UploadVideo from '../../assets/Images/Upload-video-preview.jpg';
-import '../Upload/Upload.scss';
+import './Upload.scss';
 
 function Upload() {
     return (

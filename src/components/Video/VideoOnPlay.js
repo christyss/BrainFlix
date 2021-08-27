@@ -1,14 +1,14 @@
 import './VideoOnPlay.scss';
 
-const VideoOnPlay = (props) => {
-    const video = props.onPlayVideo
+const VideoOnPlay = ({onPlayVideo}) => {
+
     return (
         <section className="video-container">
             <div className="video-container__video">
                 <video 
-                key={video.id} 
+                key={onPlayVideo.id} 
                 className="video-container__video-onplay" controls 
-                src={video.video} poster={video.image}>
+                src={onPlayVideo.video} poster={onPlayVideo.image}>
                 </video>
             </div>
         </section>
