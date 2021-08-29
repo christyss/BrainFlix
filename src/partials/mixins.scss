@@ -71,3 +71,16 @@
         border: 2px solid $brainflix-blue;
     }
 }
+
+@mixin button{
+    color: white;
+    border-radius: 0.25rem; 
+    background-color: $brainflix-blue; 
+    border-style: hidden; 
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover{
+        background-color:$brainflix-dark-blue;
+    }
+}

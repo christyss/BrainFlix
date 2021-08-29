@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UploadVideo from '../../assets/Images/Upload-video-preview.jpg';
 import './Upload.scss';
 
 function Upload() {
+    const handleClick = (event) => {
+        alert("👏  Video Uploaded Successfully 👏 ");
+    }
+
     return (
         <form className="upload">
             <h1 className="upload__title">Upload Video</h1>
@@ -20,7 +25,9 @@ function Upload() {
             </div>    
             <div className="upload__btn">
                 <button className="upload__btn-cancel-tablet">CANCEL</button>
-                <button className="upload__btn-upload">PUBLISH</button>
+                <Link from="/upload" to="/">
+                    <button onClick={handleClick} type="submit" className="upload__btn-upload">PUBLISH</button>
+                </Link>
                 <button className="upload__btn-cancel">CANCEL</button>
 
             </div>

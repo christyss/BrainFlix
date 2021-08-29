@@ -1,4 +1,4 @@
-import Header from './components/Header/Header';
+import Header from './components/PageHeader/Header';
 import Home from './pages/HomePage/Home';
 import Upload from './pages/Upload/Upload';
 import {Component} from 'react';

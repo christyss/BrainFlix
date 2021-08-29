@@ -51,7 +51,7 @@ class Home extends Component{
   }
   
   render(){
-    if (!this.state.selectedVideo) return <p>Loading...</p>;
+    if (!this.state.selectedVideo) return <p className="upload__loading">Loading...</p>;
 
     const filterChosenVideo = this.state.selectedVideo
       ? this.state.videoList.filter(video => video.id !== this.state.selectedVideo.id)
@@ -70,7 +70,7 @@ class Home extends Component{
         </div>
       );
     }
-  }
+}
 
 
 export default Home;

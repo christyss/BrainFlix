@@ -1,6 +1,12 @@
 @use '../../partials/variables.scss' as *;
 @use '../../partials/mixins.scss' as *;
 
+.upload__loading{
+    font-size: $tablet-h1;
+    font-weight: 600;
+    padding: 5rem;
+}
+
 @include desktop{
     .container__description-comments-vidlist{
         display: flex;

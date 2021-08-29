@@ -16,8 +16,8 @@
         }
 
         .videos-container{
-        display: flex;
-
+            display: flex;
+            text-decoration: none;
             &__video{
                 &-image{
                     @include video-size-list;

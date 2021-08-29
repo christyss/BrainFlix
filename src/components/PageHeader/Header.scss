@@ -54,26 +54,14 @@
             justify-content: space-around;
 
             &-btn{
-                color: white;
                 height: 3.2rem;
-                width: 19rem;
+                width: 14rem;
                 font-size: 1rem;
-                border-radius: 0.25rem; 
                 background: url(../../assets/Images/Icons/Icon-upload.svg) no-repeat 4rem center;
                 background-size: 1.1rem;
-                background-color: $brainflix-blue; 
-                border-style: hidden; 
                 padding-left: 2rem;
                 margin: 0.5rem 1rem 1rem 1rem; 
-                font-weight: 600;
-                cursor: pointer;
-
-                &:hover{
-                    background-color:$brainflix-dark-blue;
-                }
-
-
-
+                @include button;
             }
 
             &-user-icon{
