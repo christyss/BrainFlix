@@ -1,0 +1,74 @@
+@use '../../partials/global.scss';
+@use '../../partials/variables.scss' as *;
+@use '../../partials/mixins.scss' as *;
+
+@include mobile{
+    .all-comments{
+        margin: 1rem;
+
+        .comment-container{
+            border-bottom: 1px solid $mercury;
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+
+            &__icon{
+                background-color: $mercury;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                flex-shrink: 0;
+                margin-right: 1rem;
+            }
+
+            &__comment{
+                display: flex;
+                flex-direction: column;
+
+                &-user{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 0.5rem;
+
+                    &-name{
+                        font-size: $mobile-paragraph;
+                        font-weight: 600;
+                    }
+
+                    &-date{
+                        font-size: $mobile-paragraph;
+                        color: $silver;
+                        font-weight: 400;
+                    }
+                }
+
+                &-text{
+                    font-size: $mobile-paragraph;
+                    font-weight: 400;
+                    line-height: 1.3rem;
+                }
+            }
+            
+        }
+    }
+}
+
+@include tablet{
+    .all-comments{
+        margin: 0 2rem;
+
+        .comment-container__comment-user{
+            display: flex;
+            justify-content: flex-start;
+
+            &-date{
+                padding-left: 1rem;
+            }
+        }
+
+        .comment-container__comment-text{
+            width: 88%;
+        }
+    }
+
+}

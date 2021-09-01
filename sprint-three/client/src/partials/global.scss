@@ -1,0 +1,9 @@
+@use './variables.scss' as *;
+@use './typography.scss' as *;
+
+*, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0;
+    color: $black;
+    font-family: 'Avenir';
+}

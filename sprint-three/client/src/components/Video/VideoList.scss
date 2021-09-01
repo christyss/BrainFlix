@@ -1,0 +1,76 @@
+@use '../../partials/mixins.scss' as *;
+@use '../../partials/variables.scss' as *;
+@use '../../partials/typography.scss' as *;
+@use '../../partials/global.scss';
+
+@include mobile{
+    .video-list{
+        margin: 1rem;
+
+        &__title{
+            font-size: $mobile-paragraph;
+            color: $silver;
+            padding: 1.2rem 0;
+            font-weight: 600;
+
+        }
+
+        .videos-container{
+            display: flex;
+            text-decoration: none;
+            &__video{
+                &-image{
+                    @include video-size-list;
+                    margin: 0.5rem 1rem 0.5rem 0;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+
+            &__video-info{
+                &-name{
+                    font-size: $mobile-subheader;
+                    margin-top: 0.5rem;
+                    font-size: $mobile-paragraph;
+                    font-weight: 600;
+                }
+                &-channel{
+                    font-size: $mobile-subheader;
+                    padding-top: 0.5rem;
+                    font-size: $mobile-paragraph;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@include tablet{
+    .video-list{
+        margin: 0 2rem;
+    }
+
+    .video-list__title{
+        font-size: $tablet-paragraph;
+    }
+    .videos-container__video-info{
+        width: 23%;
+    }
+}
+
+@include desktop{
+    .video-list{
+        width: 100%;
+        border-left: 1px solid $mercury;
+        padding-left: 1rem;
+        margin: 0 ;
+
+        &__title{
+            font-size: $tablet-paragraph;
+            padding: 2.5rem 0 2rem 0;
+        }
+    }
+    .videos-container__video-info{
+        width: 100%;
+    }
+}

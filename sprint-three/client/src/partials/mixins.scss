@@ -1,0 +1,86 @@
+@use './variables.scss' as *;
+@use './typography.scss' as *;
+
+
+@mixin mobile {
+    @media (min-width: $mobile) {
+        @content
+    }
+};
+
+@mixin mobile-tablet-max {
+    @media (min-width: $mobile) and (max-width: $tablet){
+        @content
+    }
+};
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content
+    }
+};
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content
+    }
+};
+
+@mixin user-icon {
+    height: 3rem;
+    width: 3rem;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 50%;
+}
+
+@mixin video-size-list {
+    height: 4.5rem;
+    width: 7.5rem;
+    border-radius: 0.25rem;
+}
+
+@mixin tablet-onplay-video-size {
+    height: 25rem;
+    width: 43.75rem;
+}
+
+@mixin desktop-onplay-video-size {
+    height: 33.75rem;
+    width: 59rem;
+}
+
+@mixin input-area {
+    resize: none;
+    border-radius: 0.25rem;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1rem;
+
+    &::placeholder{
+        padding: 0.8rem;
+        font-size: $mobile-paragraph;
+        color: $black;
+    }
+
+    &:focus{
+        outline: none;
+        border: 2px solid $brainflix-blue;
+    }
+}
+
+@mixin button{
+    color: white;
+    border-radius: 0.25rem; 
+    background-color: $brainflix-blue; 
+    border-style: hidden; 
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover{
+        background-color:$brainflix-dark-blue;
+    }
+}
