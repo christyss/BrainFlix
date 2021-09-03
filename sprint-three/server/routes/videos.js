@@ -6,17 +6,17 @@ const uniqid = require("uniqid");
 const videoPath = "./data/video-details.json";
 
 const readVideos = () => {
-    const fileContent = fs.readFileSync(videoPath);
-    const parseFileContent = JSON.parse(fileContent);
-    return parseFileContent;
+    const videoFileContent = fs.readFileSync(videoPath);
+    const parseVideoFileContent = JSON.parse(videoFileContent);
+    return parseVideoFileContent;
 }
 
-const writeVideoInfo = (data) => {
-    const videoContent = JSON.stringify(data); 
+const writeVideoInfo = (newData) => {
+    const videoContent = JSON.stringify(newData); 
     fs.writeFileSync(videoPath, videoContent);
 }
 
-router.get('/', (_req, res) => {
+router.get('/videos', (_req, res) => {
     try{
         const videos = readVideos();
         return res.status(200).json(videos); 
@@ -25,7 +25,7 @@ router.get('/', (_req, res) => {
     }
 });    
 
-router.get('/:id', (req, res) => {
+router.get('/videos/:id', (req, res) => {
     const videos = readVideos();
     const singleVideo = videos.find((video) => video.id === req.params.id);
 
@@ -35,31 +35,28 @@ router.get('/:id', (req, res) => {
     res.json(singleVideo);
 }); 
 
-router.post('/', (req, res) => {
+router.post('/videos', (req, res) => {
     
     const videos = readVideos();
     
     const newVideo = {
         id: uniqid(),
-        title: "", //req.title
+        title: req.body.title,
         channel: "Christy",
-        image: "image",
-        description: "",
-        view: "1M",
+        image: "images/image.jpeg",
+        description: req.body.description,
+        views: "1,000,002",
         likes:"8,952",
         duration: "5:35",
-        video: "video",
+        video: "",
         timestamp: Date.now(),
         comments: []
     }
+    
     videos.push(newVideo);
     writeVideoInfo(videos);
     
-    try{
-       return res.status(201).json(newVideo); 
-    }catch{
-        return res.status(404).send("Error")
-    }
+    return res.status(201).json(newVideo); 
     
 });
 

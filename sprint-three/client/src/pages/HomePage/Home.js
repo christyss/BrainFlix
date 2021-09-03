@@ -4,7 +4,7 @@ import VideoOnPlay from '../../components/Video/VideoOnPlay';
 import VideoOnPlayDescription from '../../components/Video/VideoOnPlayDescription';
 import Comment from '../../components/Comments/Comment';
 import VideoList from '../../components/Video/VideoList';
-import { API_VIDEO, API_KEY } from '../../Utils/API-KEY';
+import { API_VIDEO } from '../../Utils/API-KEY';
 import './Home.scss';
 
 class Home extends Component{
@@ -15,11 +15,14 @@ class Home extends Component{
 
   getVideoDetails = (videoId) =>{
     axios
-      .get(`${API_VIDEO}/${videoId}?api_key=${API_KEY}`)
+      .get(`${API_VIDEO}/videos/${videoId}`)
         .then(videoDetails => {
           this.setState({
             selectedVideo: videoDetails.data
           });
+        })
+        .catch((err) => {
+          console.log(`Error from getVideoDetails ${err}`);
         });
   }
 
@@ -27,17 +30,25 @@ class Home extends Component{
 
     const currentVideoId = this.props.match.params.videoId;
 
-    axios
-      .get(`${API_VIDEO}/?api_key=${API_KEY}`)
+    if (currentVideoId){
+      this.getVideoDetails(currentVideoId);
+    }
+
+    return axios
+      .get(`${API_VIDEO}/videos`)
         .then((videoResult) => {
           this.setState({
             videoList: videoResult.data,
+            selectedVideo: videoResult.data[0]
           });
           
-          const defaultVideo = videoResult.data[0];
-          const loadVideoId = currentVideoId ? currentVideoId : defaultVideo.id;
+          // const defaultVideo = videoResult.data[0];
+          // const loadVideoId = currentVideoId ? currentVideoId : defaultVideo.id;
 
-          this.getVideoDetails(loadVideoId);
+          // this.getVideoDetails(loadVideoId);
+        })
+        .catch((err) => {
+          console.log(`Error from getAllVideos ${err}`);
         })
   }
 
@@ -52,7 +63,7 @@ class Home extends Component{
   
   render(){
     if (!this.state.selectedVideo) return <p className="upload__loading">Loading...</p>;
-
+    console.log(this.state.selectedVideo);
     const filterChosenVideo = this.state.selectedVideo
       ? this.state.videoList.filter(video => video.id !== this.state.selectedVideo.id)
       : this.state.videoList;
