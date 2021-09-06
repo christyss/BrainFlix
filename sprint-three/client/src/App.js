@@ -1,6 +1,6 @@
-import Header from './components/PageHeader/Header';
-import Home from './pages/HomePage/Home';
-import Upload from './pages/Upload/Upload';
+import Header from './components/PageHeader/PageHeader';
+import Home from './pages/HomePage/HomePage';
+import Upload from './pages/UploadPage/UploadPage';
 import {Component} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 

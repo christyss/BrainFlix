@@ -39,10 +39,12 @@
             &-area{
                 @include input-area;
                 height: 3rem;
+                padding: 1rem
             }
             &-area--larger{
                 @include input-area;
                 height: 9rem;
+                padding: 1rem
             }
         }
 

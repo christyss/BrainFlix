@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from '../../assets/Images/Logo/Logo-brainflix.svg';
 import UserIcon from '../../assets/Images/Mohan-muruge.jpg';
-import './Header.scss';
+import './PageHeader.scss';
 
 function Header() {
     return (

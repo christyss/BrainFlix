@@ -1,8 +1,8 @@
 import React from 'react';
 import UserIcon from '../../assets/Images/Mohan-muruge.jpg';
 import videoDate from '../../Utils/timestamp-function';
-import './Comment.scss';
-import './InputComment.scss';
+import './VideoComments.scss';
+import './VideoInputComment.scss';
 
 function Comment({videoComments}) {
     return (

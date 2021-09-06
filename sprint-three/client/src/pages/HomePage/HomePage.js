@@ -2,12 +2,12 @@ import {Component} from 'react';
 import axios from "axios";
 import VideoOnPlay from '../../components/Video/VideoOnPlay';
 import VideoOnPlayDescription from '../../components/Video/VideoOnPlayDescription';
-import Comment from '../../components/Comments/Comment';
+import Comment from '../../components/VideoComments/VideoComments';
 import VideoList from '../../components/Video/VideoList';
 import { API_VIDEO } from '../../Utils/API-KEY';
-import './Home.scss';
+import './HomePage.scss';
 
-class Home extends Component{
+class HomePage extends Component{
   state ={
     videoList: [],
     selectedVideo: null,
@@ -41,11 +41,6 @@ class Home extends Component{
             videoList: videoResult.data,
             selectedVideo: videoResult.data[0]
           });
-          
-          // const defaultVideo = videoResult.data[0];
-          // const loadVideoId = currentVideoId ? currentVideoId : defaultVideo.id;
-
-          // this.getVideoDetails(loadVideoId);
         })
         .catch((err) => {
           console.log(`Error from getAllVideos ${err}`);
@@ -84,4 +79,4 @@ class Home extends Component{
 }
 
 
-export default Home;
+export default HomePage;

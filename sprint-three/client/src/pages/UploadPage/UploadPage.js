@@ -1,16 +1,15 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import UploadVideo from '../../assets/Images/Upload-video-preview.jpg';
 import axios from "axios";
 import { API_VIDEO } from '../../Utils/API-KEY';
 import { createRef } from "react";
-import './Upload.scss';
+import './UploadPage.scss';
 
 const formRef = createRef();
 
 function Upload({history}) {
     console.log(history);
-    const handleSubmit = (event) => {
+    const handleOnSubmit = (event) => {
         event.preventDefault();
         const title = formRef.current.title.value;
         const description = formRef.current.description.value;
@@ -43,7 +42,6 @@ function Upload({history}) {
     }
 
     return (
-        <>
         <section className="upload">
             <h1 className="upload__title">Upload Video</h1>
             <div className="upload__video-container">
@@ -60,13 +58,10 @@ function Upload({history}) {
             </div>
                 <div className="upload__btn">
                     <button className="upload__btn-cancel-tablet">CANCEL</button>
-                    {/* <Link to="/"> */}
-                        <button onClick={handleSubmit} type="button" className="upload__btn-upload">PUBLISH</button>
-                    {/* </Link> */}
+                        <button onClick={handleOnSubmit} type="button" className="upload__btn-upload">PUBLISH</button>
                     <button className="upload__btn-cancel">CANCEL</button>
                 </div>
             </section>
-          </>
     )
 }
 

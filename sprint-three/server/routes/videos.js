@@ -42,20 +42,20 @@ router.post('/videos', (req, res) => {
     const newVideo = {
         id: uniqid(),
         title: req.body.title,
-        channel: "Christy",
-        image: "images/image.jpeg",
+        channel: "EatingwithChristy ",
+        image: "http://localhost:8000/images/image9.jpeg",
         description: req.body.description,
-        views: "1,000,002",
+        views: "1,008,002",
         likes:"8,952",
         duration: "5:35",
         video: "",
         timestamp: Date.now(),
-        comments: []
+        comments: [{"name":"Micheal Lyons","comment":"Everything looks delicious. Thank you for sharing!","id":uniqid(),"likes":0,"timestamp":Date.now()}]
     }
     
     videos.push(newVideo);
     writeVideoInfo(videos);
-    
+
     return res.status(201).json(newVideo); 
     
 });
